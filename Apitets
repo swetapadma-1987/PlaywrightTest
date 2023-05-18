@@ -1,0 +1,9 @@
+var client = new RestClient("https://www.boredapi.com/api/activity");
+client.Timeout = -1;
+var request = new RestRequest(Method.GET);
+request.AddHeader("Cache-Control", "no-cache");
+request.AddHeader("Accept", "*/*");
+request.AddHeader("Accept-Encoding", "gzip,deflate");
+request.AddHeader("Connection", "keep-alive");
+IRestResponse response = client.Execute(request);
+Console.WriteLine(response.Content);
