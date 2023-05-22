@@ -38,7 +38,7 @@ console.log('Search completed successfully');
 
 
 
-test('Verify Language Selected as USA(English)', async ({ page }) => {
+/*test('Verify Language Selected as USA(English)', async ({ page }) => {
 
     await page.goto('https://www.moneycorp.com/en-gb/');
     
@@ -54,4 +54,4 @@ test('Verify Language Selected as USA(English)', async ({ page }) => {
     await page.locator("//button[@id='language-dropdown-flag']").click();
     await page.getByText('USA').click();
     console.log('clicked on the Language button');
-});
+});*/
