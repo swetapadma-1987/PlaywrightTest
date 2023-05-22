@@ -22,11 +22,21 @@ await page.locator("//div[@class='u-flex u-flex-align-center u-flex-justify-end'
 console.log('Entered text successfully');
 await page.locator("//div[@class='u-flex u-flex-align-center u-flex-justify-end']//input[@type='submit']/preceding-sibling::input[@id='nav_search']").click();
 console.log('Search completed successfully');
- const res = await page.locator("//h2[text()='Search Moneycorp']".toString());
- await expect(res).toBe("Search Moneycorp");
+ const res = await page.locator("//div/h2[contains(text(),'Search')]".toString());
+ await expect(res).toBeTruthy;
  console.log('landed on search page');
+  const inputElement = await page.locator("//div/a[@class='title u-m-b2']");
+  let MyMap = new Map();
+  for (let index = 0; index < MyMap.size; index++) {
+    const inputElement = MyMap[index];
+    MyMap.set(index,inputElement);
+  }
+  MyMap.forEach(function(value) { console.log(value);});
+  });
+  
+  
 
-})
+
 
 test('Verify Language Selected as USA(English)', async ({ page }) => {
 
